@@ -19,6 +19,25 @@ module.exports = {
         environment: process.env.DATOCMS_ENVIRONMENT,
       },
     },
+    {
+      resolve: 'gatsby-plugin-module-resolver',
+      options: {
+        root: './src', // <- will be used as a root dir
+        aliases: {
+          '@components': './components', // <- will become ./src/components
+          '@utils': './utils',
+          '@templates': './templates',
+          '@pages': './pages',
+          '@hooks': './hooks',
+          '@root': '.',
+          helpers: './helpers', // <- will become ./src/helpers
+          static: {
+            root: './public', // <- will used as this alias' root dir
+            alias: './static' // <- will become ./public/static
+          }
+        }
+      }
+    },
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
     "gatsby-transformer-sharp",
