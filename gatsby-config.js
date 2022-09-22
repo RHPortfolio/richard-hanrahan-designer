@@ -6,10 +6,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://gatsbydatocmshomepage.gatsbyjs.io/",
-    title: "Gatsby DatoCMS Homepage Starter",
-    author: `Gatsby`,
-    description: "A Gatsby Starter for building homepages with DatoCMS",
+    siteUrl: "https://chumchi.com/",
+    title: "Chumchi Design Portfolio",
+    author: `Richard Hanrahan`,
+    description: "A collection of graphic design work produced by Richard Hanrahan 2010-2020",
   },
   plugins: [
     {
