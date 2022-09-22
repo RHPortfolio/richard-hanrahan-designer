@@ -1,44 +1,46 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import * as sections from "../components/sections"
-import Fallback from "../components/fallback"
+import Layout from "@components/layout"
+import * as styles from "@components/layout.css"
+import ImageWallContainer from "@components/image-wall-container"
 
 export default function Homepage(props) {
-  const { homepage } = props.data
+  const { edges: designs } = props.data.allDatoCmsDesignProject
 
   return (
-    <Layout {...homepage}>
-      {homepage.blocks.map((block) => {
-        const { id, blocktype, ...componentProps } = block
-        const Component = sections[blocktype] || Fallback
-        return <Component key={id} {...componentProps} />
-      })}
-    </Layout>
-  )
+    <Layout className={styles.page} >
+      <ImageWallContainer designs={designs} />
+    </Layout>)
 }
 
 export const query = graphql`
   {
-    homepage {
-      id
-      title
-      description
-      image {
-        id
-        url
-      }
-      blocks: content {
-        id
-        blocktype
-        ...HomepageHeroContent
-        ...HomepageFeatureListContent
-        ...HomepageCtaContent
-        ...HomepageLogoListContent
-        ...HomepageTestimonialListContent
-        ...HomepageBenefitListContent
-        ...HomepageStatListContent
-        ...HomepageProductListContent
+    allDatoCmsDesignProject(sort: {fields: when, order: DESC}) {
+      edges {
+        node {
+          client{
+            clientSlug
+          }
+          slug
+          id
+          when
+          highlighted
+          title
+          cleanImage {
+            url
+            height
+            resolutions(width:340) {
+              height
+            }
+          }
+          mainImage {
+            url
+            height
+            resolutions(width:340) {
+              height
+            }
+          }
+        }
       }
     }
   }

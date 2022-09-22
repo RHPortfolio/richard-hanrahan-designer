@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css"
-import { theme } from "../theme.css"
+import { theme } from "@root/theme.css"
 
 export const heading = style({
   fontFamily: theme.fonts.mono,

@@ -1,14 +1,14 @@
 import * as React from "react"
-import Header from "./header"
-import Footer from "./footer"
-import Head from "./head"
+import Header from "@components/header"
+import Footer from "@components/footer"
+import Head from "@components/head"
 import "../styles.css"
 
 const Layout = (props) => {
   return (
     <>
       <Head {...props} />
-      <Header />
+      <Header logo={props.logo}/>
       {props.children}
       <Footer />
     </>
