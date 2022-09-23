@@ -10,6 +10,8 @@ export default function Head({ title, description, image }) {
     >
       <meta charSet="utf-8" />
       <title>{title}</title>
+      <link rel="prefetch" href="https://www.datocms-assets.com/79085/1662491290-chumchi_design_logo.svg" as="image" type="image/svg+xml"/>
+
       {description && (
         <meta
           name="description"
