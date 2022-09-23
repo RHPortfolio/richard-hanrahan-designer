@@ -17,6 +17,7 @@
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/css-utils": "^0.1.2",
     "@vanilla-extract/webpack-plugin": "^2.1.5",
+    "browser-monads": "^1.0.0",
     "datocms-structured-text-to-html-string": "^2.0.0",
     "gatsby": "^4.15.1",
     "gatsby-plugin-image": "^2.15.0",
