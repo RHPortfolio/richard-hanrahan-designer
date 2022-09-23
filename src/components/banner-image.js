@@ -4,7 +4,7 @@ import * as textStyles from '@utils/text.css';
 
 export default function BannerImage({src, title, photographer}) {
 
-  const imgParams = "?&crop=faces,top&w=500&h=500&fit=crop";
+  const imgParams = "?auto=format&crop=faces,top&w=500&h=500&fit=crop";
 
   return (
     <>

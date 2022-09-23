@@ -3,7 +3,7 @@ import * as styles from "@components/image-carousel.css"
 
 export default function ImageCarousel({images}) {
 
-  const imgParams = "?&crop=faces,top&w=1.0&h=1.0&fit=crop"
+  const imgParams = "?auto=format&crop=faces,top&w=1.0&h=1.0&fit=crop"
   return (
     <div className={styles.imageCarousel}>
     {images.map((image) => { return (

@@ -2,8 +2,8 @@ import { style, styleVariants } from "@vanilla-extract/css"
 
 export const mount = style({
   padding: '6vw',
-  backgroundImage: "-webkit-image-set(url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&dpr=1') 1x, url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&dpr=2') 2x, url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&dpr=3') 3x)",
-  backgroundImage: "image-set(url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&dpr=1') 1x, url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&dpr=2') 2x, url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&dpr=3') 3x)",
+  backgroundImage: "-webkit-image-set(url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&auto=format&dpr=1') 1x, url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&auto=format&dpr=2') 2x, url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&auto=format&dpr=3') 3x)",
+  backgroundImage: "image-set(url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&auto=format&dpr=1') 1x, url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&auto=format&dpr=2') 2x, url('https://www.datocms-assets.com/79085/1662932817-paper_texture.jpg?fit=scale&w=600&rot=90&auto=format&dpr=3') 3x)",
   boxShadow: "inset 0px 0px 20px 10px rgb(0 0 0 / 60%)"
 });
 

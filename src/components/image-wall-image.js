@@ -46,7 +46,7 @@ export default function ImageWallImage({ title, src, category, index, highlighte
      setExpanded(!expanded)
    };
 
-  const params = "?fit=crop&crop=focalpoint&w=340";
+  const params = "?fit=crop&auto=format&crop=focalpoint&w=340";
   const children = (<img
     key={index}
     style={expanded ?
@@ -57,7 +57,7 @@ export default function ImageWallImage({ title, src, category, index, highlighte
       src + params + "&dpr=1 1x," +
       src + params + "&dpr=2 2x," +
       src + params + "&dpr=3 3x," }
-    src={ src + "?fit=crop&crop=focalpoint&w=340"}
+    src={ src + "?fit=crop&auto=format&crop=focalpoint&w=340"}
     title={title}
     alt={title + ", created by Richard Hanrahan"} />)
 

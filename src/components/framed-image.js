@@ -19,8 +19,8 @@ export default function FramedImage({screenWidth, src, title, resolutions, color
   // Establishes width and height according to native aspect ratio of image
   const width=returnImageWidth(screenWidth);
   const calculatedHeight = Math.round(width/resolutions.aspectRatio, 0);
-  const imgParams = "?&crop=faces,top&fit=crop&w=" + width;
-  const outerFrameBackgroundImage = "url(https://www.datocms-assets.com/79085/1662851920-wooden-frame-bg.jpg?fit=scale&w=600&rot=90&hue="+ frameHueAdjust+")"
+  const imgParams = "?crop=faces,top&fit=crop&auto=format&w=" + width;
+  const outerFrameBackgroundImage = "url(https://www.datocms-assets.com/79085/1662851920-wooden-frame-bg.jpg?fit=scale&auto=format&w=600&rot=90&hue="+ frameHueAdjust+")"
 
   const backgroundImage1 = { height: "calc(" + calculatedHeight + "px)", backgroundImage: "-webkit-image-set(url('" +
     src + imgParams + "&dpr=1') 1x, url('" +
