@@ -4,7 +4,7 @@ export const image = style({
   width: "100%",
   height: "15vh",
   objectFit: "cover",
-  marginBottom: "1vw",
+  // marginBottom: "1vw",
   border: 0,
   float: "left"
 })
@@ -12,9 +12,17 @@ export const highlightedImage = style({
   width: "100%",
   height: "30vh",
   objectFit: "cover",
-  marginBottom: "1vw",
+  // marginBottom: "1vw",
   border: 0,
   float: "left"
+})
+
+export const mobileImageMargin = style({
+  marginBottom: "5vw"
+})
+
+export const imageMargin = style({
+  marginBottom: "1vw"
 })
 
 export const imageWallContainer = style({

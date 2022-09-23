@@ -8,11 +8,17 @@ export const year = style({
   alignItems: "center",
   color: "white",
   padding: "2vh",
-    background: "linear-gradient(87deg, " + colors.primary + ", " + colors.muted + ")",
-  padding: "2vh",
-    float: "left",
-    width: "100%",
-    fontSize: "3rem",
-    marginBottom: "1vw",
-    fontWeight: 700
+  background: "linear-gradient(87deg, " + colors.primary + ", " + colors.muted + ")",
+  float: "left",
+  width: "100%",
+  fontSize: "3rem",
+  fontWeight: 700
+})
+
+export const mobileMargin = style({
+  marginBottom: "5vw"
+})
+
+export const margin = style({
+  marginBottom: "1vw"
 })

@@ -3,9 +3,10 @@ import * as styles from "@components/image-wall.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from 'gatsby';
 
-export default function ImageWallImage({ title, src, category, index, highlighted, expandedHeight, column, url, hasPage}) {
+export default function ImageWallImage({ title, src, category, index, highlighted, expandedHeight, column, url, hasPage, isMobile}) {
 
   const [ expanded, setExpanded ] = useState(false);
+  const isHighlighted = highlightedCheck(highlighted);
 
   function columnCalc(number){
     const remainder = number % 3;
@@ -46,27 +47,43 @@ export default function ImageWallImage({ title, src, category, index, highlighte
      setExpanded(!expanded)
    };
 
-  const params = "?fit=crop&auto=format&crop=focalpoint&w=340";
+   function addDimensions(isMobile, isHighlighted, multiplier = 1){
+     // default - 300 x 120
+     // highlighted - 300 x 220
+     var width = 300 * multiplier
+     var height = 150 * multiplier
+
+     // mobile highlighted - 360 x 260
+     // mobile - 360 x 130
+     if ( isMobile ) {
+       width = 360 * multiplier;
+       height = 160 * multiplier;
+     }
+
+     return `&w=${width}&h=${isHighlighted ? 2 * height : height}`
+   }
+
+  const params = "?fit=crop&q=85&auto=format&crop=focalpoint";
   const children = (<img
     key={index}
     style={expanded ?
       { transition: "2s", width: "100%", height: expandedHeight, maxWidth: "inherit" }
       : { transition: "0.5s"}}
-    className={(highlightedCheck(highlighted) ? styles.highlightedImage : styles.image) + " column" + column}
+    className={
+      (isHighlighted ? styles.highlightedImage : styles.image)
+      + ` column${column} `
+      + (isMobile ? styles.mobileImageMargin : styles.imageMargin)}
     srcSet={
-      src + params + "&dpr=1 1x," +
-      src + params + "&dpr=2 2x," +
-      src + params + "&dpr=3 3x," }
-    src={ src + "?fit=crop&auto=format&crop=focalpoint&w=340"}
+      src + params + addDimensions(isMobile, isHighlighted) + "&dpr=1 1x," +
+      src + params + addDimensions(isMobile, isHighlighted, 2) + "&dpr=2 2x," +
+      src + params + addDimensions(isMobile, isHighlighted, 2.5) + "&dpr=3 3x," }
+    src={ src + params + addDimensions(isMobile, isHighlighted)}
     title={title}
     alt={title + ", created by Richard Hanrahan"} />)
 
   return (
     <>
-
         <Link to={url}>{children}</Link>
-
-
     </>
   )
 

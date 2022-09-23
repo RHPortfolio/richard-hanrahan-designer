@@ -2,9 +2,13 @@ import * as React from "react"
 import * as styles from "@components/image-wall.css"
 import ImageWallImage from "@components/image-wall-image.js"
 import YearImage from "@components/year-image.js"
+import { isMobileViewport } from '@utils/common.js';
+import  useWindowsDimension  from '@hooks/useWindowsDimension';
 
 export default function ImageWallContainer({ designs }) {
 
+  const { width: screenWidth } = useWindowsDimension();
+  const isMobile = isMobileViewport(screenWidth);
 
   function extractYear(date){
     return new Date(date).toLocaleDateString( 'en-gb', { year: 'numeric' })
@@ -59,7 +63,7 @@ return (
         currentYear = THISyear;
         return (
           <>
-            <YearImage year={THISyear}/>
+            <YearImage year={THISyear} isMobile={isMobile} />
             <ImageWallImage
               hasPage={checkPageLink(design.node.client?.clientSlug, design.node.slug, design.node)}
               key={design.node.id}
@@ -69,14 +73,15 @@ return (
               highlighted={design.node.highlighted ? design.node.highlighted : false}
               title={design.node.title}
               src={displayImage.url}
-              category={"Print"} />
+              category={"Print"}
+              isMobile={isMobile} />
           </>
         )
       }
 
       return (
         <ImageWallImage
-          hasPage={checkPageLink(design.node.client?.clientSlug, design.node.slugm, design.node)}
+          hasPage={checkPageLink(design.node.client?.clientSlug, design.node.slug, design.node)}
           key={design.node.id}
           url={'projects/' + design.node.slug}
           column={chooseColumn(index)}
@@ -84,7 +89,8 @@ return (
           highlighted={design.node.highlighted ? design.node.highlighted : false}
           title={design.node.title}
           src={displayImage.url}
-          category={"Print"} />
+          category={"Print"}
+          isMobile={isMobileViewport(screenWidth)} />
       )
     })
   }
