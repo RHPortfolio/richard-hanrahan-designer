@@ -1,39 +1,40 @@
 import * as React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
+ import { Link } from "gatsby"
 import * as styles from "./navbar.css"
 import Logo from '@components/logo.js'
 import { isMobileViewport } from '@utils/common.js';
-import useWindowDimensions from '@hooks/useWindowsDimension.js';
+import useWindowsDimension from '@hooks/useWindowsDimension.js';
 
 export default function Navbar() {
 
-  const { width: screenWidth } = useWindowDimensions();
+  const { width: screenWidth } = useWindowsDimension();
 
-  const data = useStaticQuery(graphql`
-    query navbar{
-      allDatoCmsUi(filter: {
-        platform: {
-          title: {
-            eq: "design portfolio"
-          }
-        }, title: {
-            eq: "Chumchi Masthead"
-          }
-        })
+  // const data = useStaticQuery(graphql`
+  //   query navbar{
+  //     allDatoCmsUi(filter: {
+  //       platform: {
+  //         title: {
+  //           eq: "design portfolio"
+  //         }
+  //       }, title: {
+  //           eq: "Chumchi Masthead"
+  //         }
+  //       })
+  //
+  //       {
+  //         edges {
+  //           node {
+  //             element {
+  //               url
+  //             }
+  //         title
+  //       }
+  //     }
+  //   }}`)
 
-        {
-          edges {
-            node {
-              element {
-                url
-              }
-          title
-        }
-      }
-    }}`)
 
-
-  const { element: logo } = data.allDatoCmsUi.edges[0].node
+  // const { element: logo } = data.allDatoCmsUi.edges[0].node
   // console.log(JSON.stringify(data))
 
   return (

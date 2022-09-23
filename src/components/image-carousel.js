@@ -6,7 +6,7 @@ export default function ImageCarousel({images}) {
   const imgParams = "?&crop=faces,top&w=1.0&h=1.0&fit=crop"
   return (
     <div className={styles.imageCarousel}>
-    {images.map(image => {
+    {images.map((image) => { return (
       <img
         className={styles.carouselImage}
         srcSet={
@@ -16,7 +16,7 @@ export default function ImageCarousel({images}) {
         src={image.src + imgParams + "&q=0.3"}
         title={image.title}
         alt={image.title + ", created by Richard Hanrahan"} />
-    })}
+    )})}
     </div>
   )
 }

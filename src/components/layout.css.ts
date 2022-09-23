@@ -19,3 +19,10 @@ export const mobileContainer = style({
   margin: "0 auto",
   // marginTop: "18vh"
 })
+
+
+export const project = style({
+  // width: "95vw",
+  // margin: "0 auto",
+  // marginTop: "18vh"
+})

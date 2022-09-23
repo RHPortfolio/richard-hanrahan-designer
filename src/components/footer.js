@@ -1,26 +1,18 @@
 import * as React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import {
   Twitter,
-  Twitch,
-  Instagram,
-  Facebook,
   Youtube,
   GitHub,
   Linkedin,
 } from "react-feather"
 import {
-  Container,
   Flex,
   FlexList,
-  Box,
-  Space,
   NavLink,
   Text,
   IconLink,
   VisuallyHidden,
 } from "./ui"
-import Logo from "@components/logo"
 import * as styles from "@components/footer.css"
 import {colors} from '@root/colors.css'
 

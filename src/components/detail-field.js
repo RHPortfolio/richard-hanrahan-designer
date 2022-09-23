@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 
 export default function DetailField({category, content, link}) {
 
-  function linkContent(link){
-    if (link) {
+  function linkContent(url){
+    if (url) {
       return (
-        <Link to={link}>{content}</Link>
+        <Link to={url}>{content}</Link>
       )}
 
       return content
@@ -15,7 +15,7 @@ export default function DetailField({category, content, link}) {
   return (
     <p>
       { category ? (<b>{category}: </b>) : "" }
-      <Link to={link}>{content}</Link>
+      {linkContent(link)}
     </p>
   )
 }

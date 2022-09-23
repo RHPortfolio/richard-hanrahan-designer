@@ -1,8 +1,5 @@
-import {useState, useEffect} from 'react';
 import * as React from 'react';
 import * as styles from '@components/framed-image.css';
-import * as textStyles from '@utils/text.css';
-import usePalette from '@hooks/usePalette';
 import { extractHueFromRGB } from '@utils/color.js';
 
 export default function FramedImage({screenWidth, src, title, resolutions, colorData, dominantColor, mutedColor, gradientColor}) {

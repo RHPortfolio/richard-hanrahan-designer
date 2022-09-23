@@ -1,8 +1,6 @@
 import * as React from "react"
-import { useEffect, useState } from 'react';
 import * as styles from "@components/image-wall.css"
 import ImageWallImage from "@components/image-wall-image.js"
-import ImageWallCollection from "@components/image-wall-collection.js"
 import YearImage from "@components/year-image.js"
 
 export default function ImageWallContainer({ designs }) {
@@ -13,7 +11,7 @@ export default function ImageWallContainer({ designs }) {
   };
 
 let currentYear = "2022"
-const regex = /highlighted/gm;
+// const regex = /highlighted/gm;
 const groupNumber = designs.length/4;
 const column1 = groupNumber*1;
 const column2 = groupNumber*2;
@@ -24,16 +22,16 @@ function chooseColumn(number){
   switch (number) {
     case number <= column1:
     return 1;
-    break
+    break;
     case number <= column2:
     return 2;
-    break
+    break;
     case number <= column3:
     return 3;
-    break
+    break;
     case number <= column4:
     return 4;
-    break
+    break;
     default:
     return 5;
   }
@@ -55,7 +53,7 @@ return (
       else {
         displayImage = design.node.mainImage
       }
-      
+
       const THISyear = extractYear(design.node.when);
       if (currentYear !== THISyear){
         currentYear = THISyear;

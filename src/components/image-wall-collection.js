@@ -1,5 +1,4 @@
 import * as React from "react"
-import * as styles from "@components/image-wall.css"
 import ImageWallImage from "@components/image-wall-image.js"
 import YearImage from "@components/year-image.js"
 
