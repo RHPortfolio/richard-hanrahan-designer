@@ -66,6 +66,7 @@ return (
             <YearImage year={THISyear} isMobile={isMobile} />
             <ImageWallImage
               hasPage={checkPageLink(design.node.client?.clientSlug, design.node.slug, design.node)}
+              displayImage={displayImage}
               key={design.node.id}
               url={'projects/' + design.node.slug}
               column={chooseColumn(index)}
@@ -82,6 +83,7 @@ return (
       return (
         <ImageWallImage
           hasPage={checkPageLink(design.node.client?.clientSlug, design.node.slug, design.node)}
+          displayImage={displayImage}
           key={design.node.id}
           url={'projects/' + design.node.slug}
           column={chooseColumn(index)}
