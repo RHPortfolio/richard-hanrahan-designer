@@ -29,9 +29,16 @@ export const query = graphql`
           cleanImage {
             url
             height
-            resolutions(width:340) {
+            resolutions(width:340)  {
               height
             }
+            image: gatsbyImageData(
+            width: 360
+            height: 300
+            placeholder: BLURRED
+            imgixParams: {fit: "crop", q: 85, auto: "format", crop: "focalpoint"}
+          )
+
           }
           mainImage {
             url
@@ -39,9 +46,42 @@ export const query = graphql`
             resolutions(width:340) {
               height
             }
+            image: gatsbyImageData(
+            width: 360
+            height: 300
+            placeholder: BLURRED
+            imgixParams: {fit: "crop", q: 85, auto: "format", crop: "focalpoint"}
+          )
           }
         }
       }
     }
   }
 `
+
+
+// Removed this from Query for each image
+// default: gatsbyImageData(
+// width: 300
+// height: 150
+// placeholder: BLURRED
+// imgixParams: {fit: "crop", q: 85, auto: "format", crop: "focalpoint"}
+// )
+// highlighted: gatsbyImageData(
+// width: 300
+// height: 300
+// placeholder: BLURRED
+// imgixParams: {fit: "crop", q: 85, auto: "format", crop: "focalpoint"}
+// )
+// mobile: gatsbyImageData(
+// width: 360
+// height: 160
+// placeholder: BLURRED
+// imgixParams: {fit: "crop", q: 85, auto: "format", crop: "focalpoint"}
+// )
+// mobileHighlighted: gatsbyImageData(
+// width: 360
+// height: 320
+// placeholder: BLURRED
+// imgixParams: {fit: "crop", q: 85, auto: "format", crop: "focalpoint"}
+// )
