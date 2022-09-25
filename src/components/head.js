@@ -1,7 +1,8 @@
 import * as React from "react"
 import { Helmet } from "react-helmet"
+import logo from "@assets/chumchi_design_logo.svg"
 
-export default function Head({ title, description, image }) {
+export default function Head({ title = "ChumChi", description = "The Graphic Design of Richard Hanrahan", image }) {
   return (
     <Helmet
       htmlAttributes={{
@@ -10,7 +11,7 @@ export default function Head({ title, description, image }) {
     >
       <meta charSet="utf-8" />
       <title>{title}</title>
-      // <link rel="prefetch" href="https://www.datocms-assets.com/79085/1662491290-chumchi_design_logo.svg" as="image" type="image/svg+xml"/>
+      <link rel="prefetch" href={logo} as="image" type="image/svg+xml"/>
 
       {description && (
         <meta

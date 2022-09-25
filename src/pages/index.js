@@ -8,7 +8,7 @@ export default function Homepage(props) {
   const { edges: designs } = props.data.allDatoCmsDesignProject
 
   return (
-    <Layout className={styles.page} >
+    <Layout className={styles.page} title={"ChumChi"} description={"The Graphic Design of Richard Hanrahan"}>
       <ImageWallContainer designs={designs} />
     </Layout>)
 }
