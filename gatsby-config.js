@@ -38,6 +38,7 @@ module.exports = {
         }
       }
     },
+    "gatsby-plugin-preload-fonts",
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
     "gatsby-transformer-sharp",
