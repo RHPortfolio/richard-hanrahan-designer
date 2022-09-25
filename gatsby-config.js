@@ -24,12 +24,13 @@ module.exports = {
       options: {
         root: './src', // <- will be used as a root dir
         aliases: {
-          '@components': './components', // <- will become ./src/components
-          '@utils': './utils',
-          '@templates': './templates',
-          '@pages': './pages',
+          '@assets': './assets',
+          '@components': './components', // <- becomes ./src/components
           '@hooks': './hooks',
+          '@pages': './pages',
           '@root': '.',
+          '@templates': './templates',
+          '@utils': './utils',
           helpers: './helpers', // <- will become ./src/helpers
           static: {
             root: './public', // <- will used as this alias' root dir
